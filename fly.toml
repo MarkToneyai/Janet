@@ -1,0 +1,18 @@
+# Fly.io app config for Command Post
+# App name must be globally unique on Fly — change it if 'command-post-mt' is taken:
+#   fly apps create command-post-mt
+app = "command-post-mt"
+primary_region = "sjc"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+
+[[vm]]
+  size = "shared-cpu-1x"
+  memory = "256mb"
